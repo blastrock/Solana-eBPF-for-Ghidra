@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<processor_spec>
+	<properties>
+		<!-- load that library to dynamically inject pcode (see eBPFSol.cspec) -->
+		<property key="pcodeInjectLibraryClass" value="ghidra.app.util.pcodeInject.PcodeInjectLibraryEBPFSOL"/>
+	</properties>
+	<programcounter register="PC"/>
+		<default_memory_blocks>
+			<!-- statically sized heap -->
+			<memory_block name="solana_heap" start_address="0x300000000" length="0x8000" initialized="true"/>
+		</default_memory_blocks>
+</processor_spec>

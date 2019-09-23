@@ -10,7 +10,7 @@ import ghidra.program.model.mem.MemoryAccessException;
 import ghidra.program.model.reloc.Relocation;
 import ghidra.program.model.util.CodeUnitInsertionException;
 
-public class ElfeBPFRelocationFixupHandler extends RelocationFixupHandler {
+public class eBPFSolanaElfRelocationFixupHandler extends RelocationFixupHandler {
     @Override
     public boolean processRelocation(Program program, Relocation relocation, Address oldImageBase,
             Address newImageBase) throws MemoryAccessException, CodeUnitInsertionException {
@@ -27,6 +27,6 @@ public class ElfeBPFRelocationFixupHandler extends RelocationFixupHandler {
             return false;
         }
         Processor processor = language.getProcessor();
-        return (processor.equals(Processor.findOrPossiblyCreateProcessor("eBPF")));
+        return (processor.equals(Processor.findOrPossiblyCreateProcessor("eBPFSol")));
     }
 }
